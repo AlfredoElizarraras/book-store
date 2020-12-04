@@ -1,5 +1,5 @@
 const books = (state = {}, { type }) => {
-  switch(type) {
+  switch (type) {
     default: {
       return state;
     }
