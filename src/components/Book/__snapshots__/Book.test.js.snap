@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book Has a valid snapshot 1`] = `
+<tr>
+  <td>
+    1
+  </td>
+  <td>
+    Book Title
+  </td>
+  <td>
+    Book Category
+  </td>
+</tr>
+`;
