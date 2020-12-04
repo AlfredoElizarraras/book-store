@@ -3,7 +3,8 @@ import React from 'react';
 
 const App = () => (
   <div>
-    Book store app.
+    <BookForm />
+    <BookList />
   </div>
 );
 
