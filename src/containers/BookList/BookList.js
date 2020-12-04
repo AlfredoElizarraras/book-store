@@ -40,6 +40,4 @@ BookList.defaultProps = {
   ],
 };
 
-const mapStateToProps = state => ({ books: state.books });
-
-export default connect(mapStateToProps)(BookList);
+export default BookList;
