@@ -25,7 +25,7 @@
 
 ## Live Demo
 
-Coming soon.
+https://book-store-cms.herokuapp.com/
 
 ## Getting started
 
@@ -101,7 +101,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - To deploy your own version of this book-store run in Heroku, run the following command:
 
   ```
-  heroku create -b https://github.com/mars/create-react-app-buildpack.git book-store-by-your-name
+  heroku create -b https://github.com/mars/create-react-app-buildpack.git book-store-cms-by-your-name
   ```
 
 ## Authors
