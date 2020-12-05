@@ -3,8 +3,9 @@ import {
   REMOVE_BOOK,
 } from '../utils/actionTypes';
 import book from './book';
+import initBooks from '../utils/data';
 
-const books = (state = [], action) => {
+const books = (state = initBooks, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, book(undefined, action)];
