@@ -10,7 +10,9 @@ exports[`App Has a valid snapshot 1`] = `
       <input
         id="title"
         name="title"
+        onChange={[Function]}
         type="title"
+        value=""
       />
     </label>
     <label
@@ -20,6 +22,8 @@ exports[`App Has a valid snapshot 1`] = `
       <select
         id="categories"
         name="categories"
+        onChange={[Function]}
+        value="Action"
       >
         <option
           value="Action"
@@ -57,6 +61,12 @@ exports[`App Has a valid snapshot 1`] = `
           Sci-Fi
         </option>
       </select>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Add Book
+      </button>
     </label>
   </form>
   <table>
@@ -76,13 +86,35 @@ exports[`App Has a valid snapshot 1`] = `
     <tbody>
       <tr>
         <td>
-          0
+          58109aa4-c849-4280-9d8a-8720ac67376a
         </td>
         <td>
-          Default
+          Book 1
         </td>
         <td>
-          Default
+          Action
+        </td>
+      </tr>
+      <tr>
+        <td>
+          da1340a4-d28d-470a-8b90-b6e81e92f79a
+        </td>
+        <td>
+          Book2
+        </td>
+        <td>
+          Learning
+        </td>
+      </tr>
+      <tr>
+        <td>
+          a7726433-a81e-4392-8ef2-bf2cb5fd7f1a
+        </td>
+        <td>
+          Book3
+        </td>
+        <td>
+          Horror
         </td>
       </tr>
     </tbody>
