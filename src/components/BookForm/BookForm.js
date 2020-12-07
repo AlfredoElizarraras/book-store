@@ -11,9 +11,12 @@ class BookForm extends React.Component {
       title: '',
       category: BOOK_CATEGORIES[0],
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit = () => {
+  handleSubmit = event => {
+    event.preventDefault();
     const { title, category } = this.state;
     const { addBook } = this.props;
     const book = {
@@ -24,14 +27,12 @@ class BookForm extends React.Component {
     addBook(book);
 
     this.setState({ title: '', category: BOOK_CATEGORIES[0] });
-  }
+  };
 
-  updateTitle(title) {
-    this.setState({ title });
-  }
-
-  updateCategory(category) {
-    this.setState({ category });
+  handleChange({ name, value }) {
+    this.setState({
+      [name]: value,
+    });
   }
 
   render() {
@@ -44,7 +45,7 @@ class BookForm extends React.Component {
             type="title"
             id="title"
             name="title"
-            onChange={e => this.updateTitle(e.target.value)}
+            onChange={e => this.handleChange({ name: 'title', value: e.target.value })}
             value={title}
           />
         </label>
@@ -53,7 +54,7 @@ class BookForm extends React.Component {
           <select
             id="categories"
             name="categories"
-            onChange={e => this.updateCategory(e.target.value)}
+            onChange={e => this.handleChange({ name: 'category', value: e.target.value })}
             value={category}
           >
             {BOOK_CATEGORIES.map(category => (

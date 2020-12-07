@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { v4 as uuid } from 'uuid';
 import Book from './Book';
 import { removeBook } from '../../actions';
 
 describe('Book', () => {
   const props = {
-    book: { id: 1, title: 'Book Title', category: 'Book Category' },
+    book: { id: uuid(), title: 'Book Title', category: 'Book Category' },
     handleRemoveBook: id => removeBook({ id }),
   };
 
