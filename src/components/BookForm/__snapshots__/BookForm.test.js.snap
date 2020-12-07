@@ -9,7 +9,9 @@ exports[`BookForm Has a valid snapshot 1`] = `
     <input
       id="title"
       name="title"
+      onChange={[Function]}
       type="title"
+      value=""
     />
   </label>
   <label
@@ -19,6 +21,8 @@ exports[`BookForm Has a valid snapshot 1`] = `
     <select
       id="categories"
       name="categories"
+      onChange={[Function]}
+      value="Action"
     >
       <option
         value="Action"
@@ -56,6 +60,12 @@ exports[`BookForm Has a valid snapshot 1`] = `
         Sci-Fi
       </option>
     </select>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Add Book
+    </button>
   </label>
 </form>
 `;
