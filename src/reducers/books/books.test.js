@@ -3,7 +3,7 @@ import books from './books';
 import {
   addBook,
   removeBook,
-} from '../actions';
+} from '../../actions';
 
 describe('books reducer', () => {
   it('Should add new books information without mutating the state', () => {

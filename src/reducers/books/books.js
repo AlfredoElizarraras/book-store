@@ -1,9 +1,9 @@
 import {
   ADD_BOOK,
   REMOVE_BOOK,
-} from '../utils/actionTypes';
+} from '../../utils/actionTypes';
 import book from './book';
-import initBooks from '../utils/data';
+import initBooks from '../../utils/data';
 
 const books = (state = initBooks, action) => {
   switch (action.type) {
