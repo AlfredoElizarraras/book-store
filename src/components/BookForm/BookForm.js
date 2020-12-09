@@ -52,7 +52,7 @@ class BookForm extends React.Component {
         </label>
         <label htmlFor="categories" className="flex flex-column">
           <span>
-            Choose a car:
+            Choose a category:
           </span>
           <select
             id="categories"
