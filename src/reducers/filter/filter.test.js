@@ -5,8 +5,8 @@ import categoryFilter from './filter';
 describe('Filter reducer', () => {
   it('Should change the filter category without modifiying the state.', () => {
     const stateBefore = '';
-    const stateAfter = 'Horror';
-    const action = changeFilter('Horror');
+    const stateAfter = null;
+    const action = changeFilter('ALL');
 
     deepFreeze(stateBefore);
     deepFreeze(action);
