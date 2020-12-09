@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { v4 as uuid } from 'uuid';
 import BookList from './BookList';
-import { removeBook } from '../../actions';
+import { removeBook, changeFilter } from '../../actions';
 
 describe('BookList', () => {
   const props = {
@@ -14,7 +14,11 @@ describe('BookList', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<BookList books={props.books} removeBook={removeBook} />, div);
+    ReactDOM.render(<BookList
+      books={props.books}
+      removeBook={removeBook}
+      changeFilter={changeFilter}
+    />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });

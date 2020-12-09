@@ -1,4 +1,4 @@
-import { ADD_BOOK, REMOVE_BOOK } from '../utils/actionTypes';
+import { ADD_BOOK, REMOVE_BOOK } from '../../utils/actionTypes';
 
 const book = (state, action) => {
   switch (action.type) {
