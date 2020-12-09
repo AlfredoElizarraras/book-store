@@ -1,0 +1,11 @@
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+form {
+  margin-bottom: 1rem;
+}

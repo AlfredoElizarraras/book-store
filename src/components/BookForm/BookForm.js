@@ -2,6 +2,7 @@ import React from 'react';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
 import BOOK_CATEGORIES from '../../utils/const';
+import './index.css';
 
 class BookForm extends React.Component {
   constructor(props) {
@@ -38,9 +39,9 @@ class BookForm extends React.Component {
   render() {
     const { title, category } = this.state;
     return (
-      <form>
-        <label htmlFor="title">
-          Book Title:
+      <form className="flex flex-column">
+        <label htmlFor="title" className="flex flex-column">
+          <span> Book Title:</span>
           <input
             type="title"
             id="title"
@@ -49,8 +50,10 @@ class BookForm extends React.Component {
             value={title}
           />
         </label>
-        <label htmlFor="categories">
-          Choose a car:
+        <label htmlFor="categories" className="flex flex-column">
+          <span>
+            Choose a car:
+          </span>
           <select
             id="categories"
             name="categories"
@@ -63,10 +66,10 @@ class BookForm extends React.Component {
               </option>
             ))}
           </select>
-          <button type="button" onClick={this.handleSubmit}>
-            Add Book
-          </button>
         </label>
+        <button type="button" onClick={this.handleSubmit}>
+          Add Book
+        </button>
       </form>
     );
   }
