@@ -1,7 +1,13 @@
 import { connect } from 'react-redux';
 import BookList from './BookList';
-import { removeBook } from '../../actions';
+import { removeBook, changeFilter } from '../../actions';
+import { getBooksByCategory } from '../../utils/selectors/selectors';
 
-const mapStateToProps = state => ({ books: state.books });
+const mapStateToProps = state => {
+  const { filter } = state;
+  const books = getBooksByCategory(state, filter);
 
-export default connect(mapStateToProps, { removeBook })(BookList);
+  return { books };
+};
+
+export default connect(mapStateToProps, { removeBook, changeFilter })(BookList);
