@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+:root {
+  --black-three: #121212;
+  --azure: #0290ff;
+}
+
+.panel-bg {
+  /* width: 1400px; */
+  height: 95px;
+  margin: 0 0 38px;
+  padding: 23px 99px 27px 100px;
+  background-color: #ffffff;
+}
+
+.bookstore-cms-title {
+  width: 240px;
+  height: 37px;
+  margin: 6px 47px 2px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--azure);
+}
+
+.nav__link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  margin-top: 18px;
+  margin-bottom: 11px;
+  text-decoration: none;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--black-three);
+}
+
+.books {
+  margin-right: 41px;
+}
+
+.categories {
+  opacity: 0.5;
+}
+
+.oval {
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border: solid 1px #e8e8e8;
+  border-radius: 50%;
+}
+
+.mask {
+  width: 17px;
+  height: 17px;
+}
