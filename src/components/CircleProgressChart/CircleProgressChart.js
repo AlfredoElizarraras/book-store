@@ -58,8 +58,8 @@ CircleProgressChart.propTypes = {
   radius: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
-  maxValue: PropTypes.string,
-  currentValue: PropTypes.string,
+  maxValue: PropTypes.number,
+  currentValue: PropTypes.number,
   strokeWidth: PropTypes.string,
 };
 

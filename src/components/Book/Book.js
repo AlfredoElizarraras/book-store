@@ -34,13 +34,20 @@ const Book = ({ book, handleRemoveBook }) => (
     </div>
     <div className="flex jc-sb">
       <div className="flex jc-c ai-c book__chart-wrapper">
-        <CircleProgressChart
-          percent={book.progress}
-          radius="35"
-          strokeWidth="5"
-          maxValue={book.maxProgressValue}
-          currentValue={book.currentProgressValue}
-        />
+        {book.maxProgressValue === 0 && book.currentProgressValue === 0 ? (
+          <CircleProgressChart
+            percent={book.progress}
+            radius="35"
+            strokeWidth="5"
+          />
+        ) : (
+          <CircleProgressChart
+            radius="35"
+            strokeWidth="5"
+            maxValue={book.maxProgressValue}
+            currentValue={book.currentProgressValue}
+          />
+        )}
         <span className="book__chart-wrapper--border-right" />
       </div>
       <div className="flex flex-col">
