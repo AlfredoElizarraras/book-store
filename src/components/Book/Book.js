@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CircleProgressChart from '../CircleProgressChart';
+import Button from '../Button';
 import '../../flex.css';
 import './index.css';
 
@@ -39,10 +40,10 @@ const Book = ({ book, handleRemoveBook }) => (
         <CircleProgressChart percent={book.progress} radius="35" strokeWidth="5" />
         <span className="book__chart-wrapper--border-right" />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col jc-sb">
         <span>Current book progress measure</span>
         <span>progress value</span>
-        <button type="button">Update progress</button>
+        <Button>Update progress</Button>
       </div>
     </div>
   </article>
