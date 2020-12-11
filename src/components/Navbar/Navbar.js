@@ -4,7 +4,7 @@ import '../../flex.css';
 import './index.css';
 
 const Navbar = () => (
-  <nav className="panel-bg flex ai-c jc-sb">
+  <nav className="navbar flex ai-c jc-sb">
     <div className="inline-flex">
       <h1 className="bookstore-cms-title">Bookstore CMS</h1>
       <a href="#Bookstore" className="nav__link books">BOOKS</a>

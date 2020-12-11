@@ -5,10 +5,8 @@
   --azure: #0290ff;
 }
 
-.panel-bg {
-  /* width: 1400px; */
+.navbar {
   height: 95px;
-  margin: 0 0 38px;
   padding: 23px 99px 27px 100px;
   background-color: #fff;
 }

@@ -1,18 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../flex.css';
 import './index.css';
 
 const Book = ({ book, handleRemoveBook }) => (
-  <tr>
-    <td>{ book.id }</td>
-    <td>{ book.title }</td>
-    <td>{ book.category }</td>
-    <td>
-      <button type="button" onClick={() => handleRemoveBook(book.id)}>
-        remove book
-      </button>
-    </td>
-  </tr>
+  <article id={book.id} className="flex book jc-sb">
+    <div>
+      <div>
+        <span>{book.category}</span>
+        <h2>{book.title}</h2>
+        <span>book author</span>
+      </div>
+      <div>
+        <a href="#the-hunger-games">Comments</a>
+        <a href="#the-hunger-games" onClick={() => handleRemoveBook(book.id)}>Remove</a>
+        <a href="#the-hunger-games">Edit</a>
+      </div>
+    </div>
+    <div className="flex jc-c ai-c">
+      Book visual progress
+    </div>
+    <div className="flex flex-col">
+      <span>Current book progress measure</span>
+      <button type="button">Update progress</button>
+    </div>
+  </article>
 );
 
 Book.propTypes = {

@@ -1,40 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Book from '../../components/Book';
-import CategoryFilter from '../../components/CategoryFilter';
+import './index.css';
 
-const BookList = ({ books = [], removeBook, changeFilter }) => {
+const BookList = ({ books = [], removeBook }) => {
   const handleRemoveBook = id => {
     removeBook({ id });
   };
 
-  const handleFilterChange = filter => {
-    changeFilter(filter);
-  };
-
   return (
-    <>
-      <CategoryFilter handleFilterChange={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map(
-            book => (
-              (
-                <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
-              )
-            ),
-          )}
-        </tbody>
-      </table>
-    </>
+    <div className="bookList flex jc-c">
+      <div style={{ borderBottom: '1px solid #e8e8e8', width: '80%' }}>
+        {books.map(book => (
+          <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
+        ))}
+      </div>
+    </div>
   );
 };
 
@@ -47,7 +28,6 @@ BookList.propTypes = {
     }),
   ).isRequired,
   removeBook: PropTypes.func.isRequired,
-  changeFilter: PropTypes.func.isRequired,
 };
 
 export default BookList;
