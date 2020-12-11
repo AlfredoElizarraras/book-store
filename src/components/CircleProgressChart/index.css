@@ -1,6 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --black-three: #121212;
+}
+
 .circleProgressChart {
   transform: rotate(-90deg);
   transition: all 1s ease-in-out;
-  stroke-width: 8;
   fill: none;
+}
+
+.circle__percentage-title {
+  width: 68px;
+  height: 39px;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
+}
+
+.circle__completed {
+  opacity: 0.5;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
 }

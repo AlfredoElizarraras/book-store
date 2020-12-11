@@ -35,8 +35,9 @@ const Book = ({ book, handleRemoveBook }) => (
       </div>
     </div>
     <div className="flex jc-sb">
-      <div className="flex jc-c ai-c">
-        <CircleProgressChart percent={book.progress} />
+      <div className="flex jc-c ai-c book__chart-wrapper">
+        <CircleProgressChart percent={book.progress} radius="35" strokeWidth="5" />
+        <span className="book__chart-wrapper--border-right" />
       </div>
       <div className="flex flex-col">
         <span>Current book progress measure</span>

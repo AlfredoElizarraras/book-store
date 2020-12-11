@@ -12,6 +12,7 @@ const CircleProgressChart = ({
   height,
   maxValue,
   currentValue,
+  strokeWidth,
 }) => {
   const calculatePercentage = (maxValue, currentValue) => (currentValue * 100) / maxValue;
   const circleCircum = radius => 2 * radius * Math.PI;
@@ -29,21 +30,22 @@ const CircleProgressChart = ({
   return (
     <>
       <svg className="circleProgressChart" width={width} height={height}>
-        <circle cx="50" cy="50" r={radius} stroke={bgMain} />
+        <circle cx="50" cy="50" r={radius} stroke={bgMain} strokeWidth={strokeWidth} />
         <circle
           cx="50"
           cy="50"
           r={radius}
           stroke={bgProgress}
           strokeDasharray={circleProgressValue()}
+          strokeWidth={strokeWidth}
         />
       </svg>
       <div>
-        <h3>
+        <h3 className="circle__percentage-title">
           {percent || calculatePercentage(maxValue, currentValue)}
           %
         </h3>
-        <span>completed</span>
+        <span className="circle__completed">completed</span>
       </div>
     </>
   );
@@ -58,6 +60,7 @@ CircleProgressChart.propTypes = {
   height: PropTypes.string,
   maxValue: PropTypes.string,
   currentValue: PropTypes.string,
+  strokeWidth: PropTypes.string,
 };
 
 CircleProgressChart.defaultProps = {
@@ -69,6 +72,7 @@ CircleProgressChart.defaultProps = {
   height: '100',
   maxValue: '100',
   currentValue: '0',
+  strokeWidth: '8',
 };
 
 export default CircleProgressChart;

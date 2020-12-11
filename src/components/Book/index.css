@@ -55,3 +55,14 @@
 .book__action-link--last {
   border: none;
 }
+
+.book__chart-wrapper {
+  margin-right: 3.6875rem;
+}
+
+.book__chart-wrapper--border-right {
+  height: 70%;
+  background-color: #e8e8e8;
+  width: 1px;
+  margin-left: 4.938rem;
+}
