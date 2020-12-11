@@ -40,10 +40,10 @@ const Book = ({ book, handleRemoveBook }) => (
         <CircleProgressChart percent={book.progress} radius="35" strokeWidth="5" />
         <span className="book__chart-wrapper--border-right" />
       </div>
-      <div className="flex flex-col jc-sb">
-        <span>Current book progress measure</span>
-        <span>progress value</span>
-        <Button>Update progress</Button>
+      <div className="flex flex-col">
+        <span className="book__progress-measure">Current book progress measure</span>
+        <span className="book__current-progress-value">progress value</span>
+        <Button margin="0.6rem 0px 0px">Update progress</Button>
       </div>
     </div>
   </article>
