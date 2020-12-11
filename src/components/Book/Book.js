@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CircleProgressChart from '../CircleProgressChart';
 import '../../flex.css';
 import './index.css';
 
@@ -34,7 +35,9 @@ const Book = ({ book, handleRemoveBook }) => (
       </div>
     </div>
     <div className="flex jc-sb">
-      <div className="flex jc-c ai-c">Book visual progress</div>
+      <div className="flex jc-c ai-c">
+        <CircleProgressChart percent={book.progress} />
+      </div>
       <div className="flex flex-col">
         <span>Current book progress measure</span>
         <span>progress value</span>
@@ -49,15 +52,14 @@ Book.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    progress: PropTypes.number,
   }),
   handleRemoveBook: PropTypes.func.isRequired,
 };
 
 Book.defaultProps = {
   book: {
-    id: null,
-    title: null,
-    category: null,
+    progress: 30,
   },
 };
 
