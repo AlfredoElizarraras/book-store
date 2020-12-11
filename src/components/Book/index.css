@@ -1,5 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --black-three: #121212;
+}
+
 .book {
   margin-bottom: 1rem;
   padding: 1.5rem 3rem 1.5rem 1rem;
   border: 1px solid #e8e8e8;
+}
+
+.book__main-info__title {
+  color: var(--black-three);
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  margin-top: 0.25rem;
+}
+
+.book__main-info__category {
+  opacity: 0.5;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
+}
+
+.book__main-info__author {
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.book__action-links {
+  margin-top: 1rem;
+}
+
+.book__action-link {
+  text-decoration: none;
+  padding-right: 1.0625rem;
+  border-right: solid 1px #e8e8e8;
+  margin-right: 17px;
+  color: #4386bf;
+}
+
+.book__action-link--last {
+  border: none;
 }
