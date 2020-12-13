@@ -70,8 +70,8 @@ CircleProgressChart.defaultProps = {
   radius: '40',
   width: '100',
   height: '100',
-  maxValue: '100',
-  currentValue: '0',
+  maxValue: 100,
+  currentValue: 0,
   strokeWidth: '8',
 };
 

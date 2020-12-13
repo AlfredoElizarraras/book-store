@@ -9,8 +9,8 @@ const BookList = ({ books = [], removeBook }) => {
   };
 
   return (
-    <div className="bookList flex jc-c">
-      <div style={{ borderBottom: '1px solid #e8e8e8', width: '90%' }}>
+    <div className="book-list flex jc-c">
+      <div className="books__wrapper">
         {books.map(book => (
           <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
         ))}
