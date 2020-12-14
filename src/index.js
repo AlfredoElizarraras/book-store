@@ -5,6 +5,14 @@ import './index.css';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import store from './store';
+import { saveState } from './utils/localStorage';
+
+store.subscribe(() => {
+  saveState({
+
+    books: store.getState().books,
+  });
+});
 
 ReactDOM.render(
   <Provider store={store}>
