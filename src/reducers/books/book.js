@@ -1,19 +1,10 @@
-import { ADD_BOOK, REMOVE_BOOK } from '../../utils/actionTypes';
+import { ADD_BOOK } from '../../utils/actionTypes';
+import bookModel from './bookModel';
 
 const book = (state, action) => {
   switch (action.type) {
-    case ADD_BOOK: {
-      const { id, title, category } = action.payload;
-      return {
-        id,
-        title,
-        category,
-        progress: 0,
-        read: false,
-      };
-    }
-    case REMOVE_BOOK:
-      return state;
+    case ADD_BOOK:
+      return bookModel(action.payload);
     default:
       return state;
   }

@@ -1,4 +1,93 @@
-td {
-  padding-right: 1.5rem;
-  border: 1px solid #000;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --black-three: #121212;
+}
+
+.book {
+  margin-bottom: 1rem;
+  padding: 1.5rem 3rem 1.5rem 1rem;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
+
+.book__main-info__title {
+  color: var(--black-three);
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  margin-top: 0.25rem;
+}
+
+.book__main-info__category {
+  opacity: 0.5;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
+}
+
+.book__main-info__author {
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.book__action-links {
+  margin-top: 1.313rem;
+}
+
+.book__action-link {
+  text-decoration: none;
+  padding-right: 1.0625rem;
+  border-right: solid 1px #e8e8e8;
+  margin-right: 17px;
+  color: #4386bf;
+}
+
+.book__action-link--last {
+  border: none;
+}
+
+.book__chart-wrapper {
+  margin-right: 3.6875rem;
+}
+
+.book__chart-wrapper--border-right {
+  height: 70%;
+  background-color: #e8e8e8;
+  width: 1px;
+  margin-left: 4.938rem;
+}
+
+.book__progress-measure {
+  margin: 0.063rem 5.375rem 0 0;
+  opacity: 0.5;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--black-three);
+}
+
+.book__current-progress-value {
+  margin: 0.438rem 0 0.25rem 0;
+  font-size: 0.865rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: var(--black-three);
 }

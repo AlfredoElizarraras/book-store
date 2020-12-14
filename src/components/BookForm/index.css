@@ -1,11 +1,58 @@
-.flex {
-  display: flex;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.book-form {
+  margin-left: 6rem;
+  margin-right: 4.4rem;
+  margin-bottom: 4rem;
 }
 
-.flex-column {
-  flex-direction: column;
+.book-form__elements-wrapper {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: calc(63% - 1.125rem) calc(22% - 1.125rem) calc(15% - 1.125rem);
+  column-gap: 1.125rem;
 }
 
-form {
-  margin-bottom: 1rem;
+.book-form__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+input {
+  border-radius: 0.25rem;
+  padding: 0.813rem 0 0.813rem 1.063rem;
+}
+
+.book-form__select-wrapper {
+  position: relative;
+}
+
+.book-form__select-arrow {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  color: #c4c4c4;
+}
+
+.book-form__select {
+  height: 100%;
+  appearance: none;
+  border: 1px solid #c4c4c4;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  color: #c4c4c4;
 }

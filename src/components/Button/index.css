@@ -1,0 +1,11 @@
+.button {
+  border-radius: 0.188rem;
+  font-size: 0.813rem;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.031rem;
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+}

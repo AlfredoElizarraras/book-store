@@ -20,8 +20,8 @@
 
 ## About the project
 
-> This app helps Math Magicians bussines on doing some of they daily calculations. 
-  It's purpose is to showcase what I have learn about basics of react.
+> This app helps Magic-books Inc. bussines on doing some of they daily books management. 
+  It's purpose is to showcase what I have learn about React & Redux.
 
 ## Live Demo
 
@@ -128,7 +128,7 @@ Give a ⭐️ if you like this project!
 
 ## Screen shots
 
-Coming soon
+![Bookstore](/assets/images/bookstore.jpeg?raw=true "BookStore")
 
 ---
 
