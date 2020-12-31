@@ -1,12 +1,13 @@
 import React from 'react';
 import profile from './assets/images/profile.png';
+import Title from '../Title';
 import '../../flex.css';
 import './index.css';
 
 const Navbar = () => (
   <nav className="navbar flex ai-c jc-sb">
     <div className="inline-flex">
-      <h1 className="bookstore-cms-title">Bookstore CMS</h1>
+      <Title />
       <a href="#Bookstore" className="nav__link books">BOOKS</a>
       <a href="#Bookstore" className="nav__link categories">CATEGORIES</a>
     </div>

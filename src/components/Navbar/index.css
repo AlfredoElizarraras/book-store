@@ -11,20 +11,6 @@
   background-color: #fff;
 }
 
-.bookstore-cms-title {
-  width: 240px;
-  height: 37px;
-  margin: 6px 47px 2px 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: var(--azure);
-}
-
 .nav__link {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
