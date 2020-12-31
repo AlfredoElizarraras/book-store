@@ -1,6 +1,8 @@
+:root {
+  --azure: #0290ff;
+}
+
 .bookstore-cms-title {
-  width: 240px;
-  height: 37px;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: bold;
