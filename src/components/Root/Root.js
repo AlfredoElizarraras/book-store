@@ -1,16 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
-import App from '../App';
+import Auth from '../Auth';
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <App />
+    <Auth />
   </Provider>
 );
 
 Root.propTypes = {
-  store: PropTypes.func.isRequired,
+  store: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
 };
 
 export default Root;
