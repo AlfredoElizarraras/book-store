@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -26,10 +26,28 @@ const Copyright = () => (
 class Login extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      username: '',
+      email: '',
+      password: '',
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange({ name, value }) {
+    this.setState({
+      [name]: value,
+    });
   }
 
   render() {
     const { type } = this.props;
+    const {
+      username,
+      email,
+      password,
+    } = this.state;
 
     return (
       <Container component="main" maxWidth="xs">
@@ -51,6 +69,8 @@ class Login extends React.Component {
                   label="Username"
                   name="username"
                   autoComplete="username"
+                  onChange={e => this.handleChange({ name: 'username', value: e.target.value })}
+                  value={username}
                   autoFocus
                 />
                 <TextField
@@ -62,6 +82,8 @@ class Login extends React.Component {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  onChange={e => this.handleChange({ name: 'email', value: e.target.value })}
+                  value={email}
                 />
               </>
             ) : (
@@ -74,6 +96,8 @@ class Login extends React.Component {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={e => this.handleChange({ name: 'email', value: e.target.value })}
+                value={email}
                 autoFocus
               />
             )}
@@ -87,15 +111,16 @@ class Login extends React.Component {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={e => this.handleChange({ name: 'password', value: e.target.value })}
+              value={password}
             />
             <Button
               type="button"
               fullWidth
               variant="contained"
-              color="primary"
               className="submit"
             >
-              Sign In
+              { type === 'signup' ? 'Sign up' : 'Sign in' }
             </Button>
             <Grid container>
               <Grid item>
