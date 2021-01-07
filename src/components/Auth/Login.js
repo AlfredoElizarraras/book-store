@@ -9,10 +9,10 @@ import {
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import Title from '../Title';
+import './index.css';
 
 const Copyright = () => (
   <Typography variant="body2" color="textSecondary" align="center">
@@ -26,29 +26,7 @@ const Copyright = () => (
   </Typography>
 );
 
-const useStyles = makeStyles(theme => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-    backgroundColor: '#0290ff',
-  },
-}));
-
 const Login = ({ type }) => {
-  const classes = useStyles();
   const handleOnClick = () => (
     <Redirect to="/" />
   );
@@ -56,12 +34,12 @@ const Login = ({ type }) => {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
-      <div className={classes.paper}>
+      <div className="paper">
         <Title margin="1rem auto" />
         <Typography component="h2" variant="h5">
           {type === 'signup' ? 'Sign up' : 'Login' }
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className="form" noValidate>
           {type === 'signup' ? (
             <>
               <TextField
@@ -115,7 +93,7 @@ const Login = ({ type }) => {
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
+            className="submit"
             onClick={handleOnClick}
           >
             Sign In
