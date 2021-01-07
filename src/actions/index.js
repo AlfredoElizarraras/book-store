@@ -2,8 +2,7 @@ import {
   ADD_BOOK,
   REMOVE_BOOK,
   CHANGE_FILTER,
-  USER_LOGIN,
-  USER_LOGOUT,
+  USER_AUTH,
 } from '../utils/actionTypes';
 
 export const addBook = book => ({
@@ -27,13 +26,9 @@ export const changeFilter = filter => ({
   },
 });
 
-export const userLogin = user => ({
-  type: USER_LOGIN,
+export const userAuth = user => ({
+  type: USER_AUTH,
   payload: {
     user,
   },
-});
-
-export const userLogout = () => ({
-  type: USER_LOGOUT,
 });
