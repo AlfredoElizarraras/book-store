@@ -8,7 +8,9 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Title from '../Title';
+import { userAuth } from '../../actions';
 import './index.css';
 
 const Copyright = () => (
@@ -147,10 +149,11 @@ class Login extends React.Component {
 
 Login.propTypes = {
   type: PropTypes.string,
+  userAuth: PropTypes.func.isRequired,
 };
 
 Login.defaultProps = {
   type: 'login',
 };
 
-export default Login;
+export default connect(null, { userAuth })(Login);
