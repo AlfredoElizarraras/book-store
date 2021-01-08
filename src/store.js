@@ -8,16 +8,18 @@ import { loadState, saveState } from './utils/localStorage';
 const configureStore = () => {
   const localState = loadState();
   const books = localState && localState.books ? localState.books : initBooks.books;
+  const user = localState && localState.user ? localState.user : null;
 
   const store = createStore(
     rootReducer,
-    { books },
+    { books, user },
     devToolsEnhancer(),
   );
 
   store.subscribe(throttle(() => {
     saveState({
       books: store.getState().books,
+      user: store.getState().user,
     });
   }, 1000));
 
