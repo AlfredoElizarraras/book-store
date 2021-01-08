@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
 import books from './books';
-import filter from './filter';
+import user from './userAuth';
 
-export default combineReducers({ books, filter });
+export default combineReducers({ books, user });

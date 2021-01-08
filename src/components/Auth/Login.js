@@ -35,6 +35,19 @@ class Login extends React.Component {
       password: '',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const { username } = this.state;
+    const { userAuth } = this.props;
+
+    const user = {
+      username,
+      token: 'user-token',
+    };
+    userAuth(user);
   }
 
   handleChange({ name, value }) {
@@ -121,6 +134,7 @@ class Login extends React.Component {
               fullWidth
               variant="contained"
               className="submit"
+              onClick={this.handleSubmit}
             >
               { type === 'signup' ? 'Sign up' : 'Sign in' }
             </Button>
