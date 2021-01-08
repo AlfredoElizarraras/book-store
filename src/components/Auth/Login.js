@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -33,6 +33,7 @@ class Login extends React.Component {
       username: '',
       email: '',
       password: '',
+      loggedIn: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -48,6 +49,9 @@ class Login extends React.Component {
       token: 'user-token',
     };
     userAuth(user);
+    this.setState({
+      loggedIn: true,
+    });
   }
 
   handleChange({ name, value }) {
@@ -62,7 +66,14 @@ class Login extends React.Component {
       username,
       email,
       password,
+      loggedIn,
     } = this.state;
+
+    if (loggedIn) {
+      return (
+        <Redirect to="/" />
+      );
+    }
 
     return (
       <Container component="main" maxWidth="xs">

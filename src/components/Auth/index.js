@@ -5,12 +5,12 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Login from './Login';
 import App from '../App';
 
-const isAuthenticated = false;
-
-const Auth = () => (
+const Auth = ({ user }) => (
   <Router>
     <Switch>
       <Route path="/login">
@@ -24,7 +24,7 @@ const Auth = () => (
         path="/"
         render={() => (
 
-          isAuthenticated
+          user && user.token
             ? <App />
             : <Redirect to="/login" />
 
@@ -34,4 +34,15 @@ const Auth = () => (
   </Router>
 );
 
-export default Auth;
+Auth.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    token: PropTypes.string.isRequired,
+  }),
+};
+
+Auth.defaultProps = {
+  user: null,
+};
+
+export default connect(state => ({ user: state.user }))(Auth);
