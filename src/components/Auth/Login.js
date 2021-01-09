@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Title from '../Title';
 import { userAuth } from '../../actions';
+import { registerUser, loginUser } from '../../utils/request';
 import './index.css';
 
 const Copyright = () => (
@@ -41,17 +42,24 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const { username } = this.state;
-    const { userAuth } = this.props;
+    const { username, email, password } = this.state;
+    const { type } = this.props;
 
-    const user = {
-      username,
-      token: 'user-token',
-    };
-    userAuth(user);
-    this.setState({
-      loggedIn: true,
-    });
+    if (type === 'signup') {
+      try {
+        const data = registerUser({ user: { username, email, password } });
+        this.login(data);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        const data = loginUser({ user: { email, password } });
+        this.login(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 
   handleChange({ name, value }) {
@@ -59,6 +67,20 @@ class Login extends React.Component {
       [name]: value,
     });
   }
+
+  login = response => {
+    const { userAuth } = this.props;
+    response.then(data => {
+      if (data && data.data && data.data.user) {
+        userAuth(data.data.user);
+      } else {
+        userAuth(null);
+      }
+      this.setState({
+        loggedIn: true,
+      });
+    });
+  };
 
   render() {
     const { type } = this.props;
