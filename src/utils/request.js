@@ -7,21 +7,31 @@ const commonHeaders = {
 };
 
 export const registerUser = async userData => {
-  const user = await axios({
-    method: 'POST',
-    headers: commonHeaders,
-    url: `${BASE_URL}/users`,
-    data: userData,
-  });
-  return user;
+  let user = null;
+  try {
+    user = await axios({
+      method: 'POST',
+      headers: commonHeaders,
+      url: `${BASE_URL}/users`,
+      data: userData,
+    });
+    return user;
+  } catch (error) {
+    return error.response.status;
+  }
 };
 
 export const loginUser = async userData => {
-  const user = await axios({
-    method: 'POST',
-    headers: commonHeaders,
-    url: `${BASE_URL}/users/login`,
-    data: userData,
-  });
-  return user;
+  let user = null;
+  try {
+    user = await axios({
+      method: 'POST',
+      headers: commonHeaders,
+      url: `${BASE_URL}/users/login`,
+      data: userData,
+    });
+    return user;
+  } catch (error) {
+    return error.response.status;
+  }
 };

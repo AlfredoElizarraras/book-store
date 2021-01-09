@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Title from '../Title';
+import Notification from '../Notification';
 import { userAuth } from '../../actions';
 import { registerUser, loginUser } from '../../utils/request';
 import './index.css';
@@ -35,6 +36,7 @@ class Login extends React.Component {
       email: '',
       password: '',
       loggedIn: false,
+      error: null,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,19 +48,11 @@ class Login extends React.Component {
     const { type } = this.props;
 
     if (type === 'signup') {
-      try {
-        const data = registerUser({ user: { username, email, password } });
-        this.login(data);
-      } catch (error) {
-        console.log(error);
-      }
+      const data = registerUser({ user: { username, email, password } });
+      this.login(data);
     } else {
-      try {
-        const data = loginUser({ user: { email, password } });
-        this.login(data);
-      } catch (error) {
-        console.log(error);
-      }
+      const data = loginUser({ user: { email, password } });
+      this.login(data);
     }
   }
 
@@ -69,16 +63,20 @@ class Login extends React.Component {
   }
 
   login = response => {
-    const { userAuth } = this.props;
+    const { userAuth, type } = this.props;
     response.then(data => {
-      if (data && data.data && data.data.user) {
-        userAuth(data.data.user);
+      if (data === 422) {
+        this.setState({ error: `Unable to ${type === 'signup' ? 'sign up' : 'login'}` });
       } else {
-        userAuth(null);
+        if (data && data.data && data.data.user) {
+          userAuth(data.data.user);
+        } else {
+          userAuth(null);
+        }
+        this.setState({
+          loggedIn: true,
+        });
       }
-      this.setState({
-        loggedIn: true,
-      });
     });
   };
 
@@ -89,6 +87,7 @@ class Login extends React.Component {
       email,
       password,
       loggedIn,
+      error,
     } = this.state;
 
     if (loggedIn) {
@@ -99,6 +98,10 @@ class Login extends React.Component {
 
     return (
       <Container component="main" maxWidth="xs">
+        {
+          error
+            ? <Notification type="error" message={error} /> : null
+        }
         <CssBaseline />
         <div className="paper">
           <Title margin="1rem auto" />

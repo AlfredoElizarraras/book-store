@@ -3,21 +3,32 @@ import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import PropTypes from 'prop-types';
 
-const Notification = ({ type }) => {
-  const [open, setOpen] = React.useState(true);
+const Notification = ({ type, message }) => {
+  const [state, setState] = React.useState({
+    open: true,
+    vertical: 'bottom',
+    horizontal: 'right',
+  });
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
     }
 
-    setOpen(false);
+    setState({ ...state, open: false });
   };
 
+  const { vertical, horizontal, open } = state;
+
   return (
-    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+    <Snackbar
+      open={open}
+      autoHideDuration={6000}
+      onClose={handleClose}
+      anchorOrigin={{ vertical, horizontal }}
+    >
       <MuiAlert onClose={handleClose} severity={type} elevation={6} variant="filled">
-        This is a success message!
+        { message }
       </MuiAlert>
     </Snackbar>
   );
@@ -25,6 +36,7 @@ const Notification = ({ type }) => {
 
 Notification.propTypes = {
   type: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
 };
 
 export default Notification;
